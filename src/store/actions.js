@@ -5,14 +5,11 @@ export const catchEmAll = pokemons => ({
   pokemons
 });
 
-export const filterByName = name => ({
-  type: types.FILTER_POKEMONS_BY_NAME,
-  name
-});
-
-export const filterByType = pokeType => ({
-  type: types.FILTER_POKEMONS_BY_TYPE,
-  pokeType
+export const filterPokemon = (name, typeArr, weakenessArr) => ({
+  type: types.FILTER_POKEMONS,
+  name,
+  typeArr,
+  weakenessArr
 });
 
 export const getById = id => ({

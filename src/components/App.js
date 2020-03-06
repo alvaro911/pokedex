@@ -1,9 +1,9 @@
 import React, { useReducer } from 'react';
 import { topBar, logo, container } from './appStyle';
 import './App.css';
-import Pokemons from '../pages/Pokemons';
 import Context from '../store/Context';
 import { initialState, pokemonReducer } from '../store/reducer';
+import PokeApp from './PokeApp';
 
 export const App = () => {
   const [state, dispatch] = useReducer(pokemonReducer, initialState);
@@ -17,11 +17,11 @@ export const App = () => {
           />
         </div>
       </div>
-      <Context.Provider value={{ state, dispatch }}>
-        <div style={container}>
-          <Pokemons />
-        </div>
-      </Context.Provider>
+      <div style={container}>
+        <Context.Provider value={{ state, dispatch }}>
+          <PokeApp />
+        </Context.Provider>
+      </div>
     </div>
   );
 };
