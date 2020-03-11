@@ -43,10 +43,11 @@ export default function Pokemons() {
       } else {
         setTypeArr([...typeArr, name]);
       }
-    } else {
+    }
+    if (arrName === 'weaknessArr') {
       if (weaknessArr.includes(name)) {
         const index = weaknessArr.indexOf(name);
-        setWeaknessArr([...weaknesses.slice(0, index), ...weaknessArr.slice(index + 1)]);
+        setWeaknessArr([...weaknessArr.slice(0, index), ...weaknessArr.slice(index + 1)]);
       } else {
         setWeaknessArr([...weaknessArr, name]);
       }
